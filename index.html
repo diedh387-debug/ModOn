@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ModOn - مرکز بازی</title>
     <style>
-        body { font-family: Tahoma, sans-serif; background: #1a1a2e; color: #fff; text-align: center; padding: 20px; }
+        body { 
+            font-family: Tahoma, sans-serif; 
+            color: #fff; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- استایل ویدیو پس‌زمینه --- */
+        #bg-video {
+            position: fixed;       /* ثابت بمونه */
+            right: 0;
+            bottom: 0;
+            min-width: 100%;       /* کل عرض رو بپوشونه */
+            min-height: 100%;      /* کل ارتفاع رو بپوشونه */
+            z-index: -1;           /* بره پشت همه چیز */
+            object-fit: cover;     /* بدون کشیدگی، صفحه رو پر کنه */
+            opacity: 0.4;          /* کمی شفاف باشه تا متن دیده بشه */
+        }
+
         h1 { color: #e94560; font-size: 2.5em; }
-        .game-card { background: #16213e; border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .game-card img { width: 100%; border-radius: 10px; }
+        .game-card { background: rgba(22, 33, 62, 0.9); border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .btn { display: inline-block; background: #e94560; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; margin: 5px; font-weight: bold; transition: 0.3s; }
         .btn:hover { background: #ff6b6b; transform: scale(1.05); }
         .btn-download { background: #0f3460; }
@@ -17,17 +36,19 @@
 </head>
 <body>
 
+    <!-- ویدیو پس‌زمینه -->
+    <video autoplay muted loop id="bg-video">
+        <source src="video/background.mp4" type="video/mp4">
+    </video>
+
     <h1>🎮 ModOn</h1>
     <p>به مرکز بازی‌های من خوش آمدید!</p>
 
     <!-- کارت بازی اول -->
     <div class="game-card">
-        <h2>بازی اول</h2>
-        <p>توضیح کوتاه درباره این بازی...</p>
-        <!-- دکمه اجرای بازی در مرورگر -->
-        <a href="game/index.html" class="btn">▶️ بازی کن (آنلاین)</a>
-        <!-- دکمه دانلود فایل بازی -->
-        <a href="https://github.com/diedh387-debug/ModOn/releases/download/v1.0/gameguardian_101_1.apk" class="btn btn-download" download>⬇️ دانلود بازی</a>
+        <h2>GameGuardian</h2>
+        <p>برای دانلود و نصب این بازی، روی دکمه زیر کلیک کنید.</p>
+        <a href="https://github.com/diedh387-debug/ModOn/releases/download/v1.0/gameguardian_101_1.apk" class="btn btn-download" download>⬇️ دانلود فایل APK</a>
     </div>
 
     <!-- کارت بازی دوم -->
